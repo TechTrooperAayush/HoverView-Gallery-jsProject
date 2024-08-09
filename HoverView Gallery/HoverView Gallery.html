@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoverView Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poetsen One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .package{
+            height: 640px;
+            width: 490px;
+            padding: 20px;
+            box-shadow: 0 0px 30px rgb(0, 0, 0, 0.15);
+        }
+
+        .package>img{
+            height: 600px;
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        .img-box{
+            padding: 10px;
+            height: 500px;
+            width: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            flex-direction: column;
+            box-shadow: 0 0px 30px rgb(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .img-box>img{
+            height:200px;
+            width: 200px;
+            object-fit: cover;
+            margin-left: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-box">
+            <img src="./imgs/p1.jpeg" alt="reload-page"  class="Selected-img">
+            <img src="./imgs/p2.jpg" alt="reload-page" class="Selected-img">
+            <img src="./imgs/p3.jpeg" alt="reload-page" class="Selected-img">
+            <img src="./imgs/p4.jpg" alt="reload-page" class="Selected-img">
+            <img src="./imgs/p5.jpg" alt="reload-page" class="Selected-img">
+            <img src="./imgs/p6.jpg" alt="reload-page" class="Selected-img">
+        </div>
+        <div class="package">
+            <img src="./imgs/p1.jpeg" alt="reload-page" class="Show-img">
+        </div>
+    </div>
+    <script defer>
+        let selectimg = document.querySelectorAll(".Selected-img");
+        let showimg = document.querySelector(".Show-img");
+        
+
+        selectimg.forEach(function(img){
+            img.addEventListener("mouseover",function(e){
+                showimg.src = e.target.src;
+            })
+        })
+    </script>
+</body>
+</html>
